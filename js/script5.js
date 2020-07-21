@@ -1,19 +1,24 @@
 $(document).ready(init);
 
 function init(){
-  createSquare();
+  createSquare(nS);
   myClickSquare();
 }
 // ************************************************************
+function numberOfSquares(){
+  var nU = prompt('How many squares I create?');
+  return nU;
+}
 
-function createSquare(){
+var nS = numberOfSquares();
+
+// ************************************************************
+
+function createSquare(n){
   var template = $('#template').html();
-  // console.log(template);
-  // var compiled = Handlebars.compile(template);
-  // console.log(compiled);
   var target = $('#my-big-square');
 
-  for (var i = 0; i < 36; i++) {
+  for (var i = 0; i < n; i++) {
     target.append(template);
   }
 }
