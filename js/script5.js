@@ -1,6 +1,7 @@
 $(document).ready(init);
 
 function init(){
+  createSquare();
   myClickSquare();
 }
 // ************************************************************
@@ -42,93 +43,18 @@ function myClickSquare(){
     }
   });
 }
+// ************************************************************
 
+function createSquare(){
 
+  var template = $('#template').html();
+  // console.log(template);
+  var compiled = Handlebars.compile(template);
+  // console.log(compiled);
+  var target = $('#my-big-square');
 
+  for (var i = 0; i < 36; i++) {
+    target.append(template);
+  }
 
-
-
-// //snack 1
-//
-//
-// $(document).ready(init);
-//
-// function init(){
-//   getNewListener();
-// }
-//
-//
-// function getNewListener(){
-//   $.ajax({
-//
-//     url: 'https://flynn.boolean.careers/exercises/api/array/integers?min=50&max=100&items=10',
-//     method: 'GET',
-//     success: function (data, state){
-//       // console.log(data);
-//       var targetPair = $('#pair');
-//       var targetOdd = $('#odd');
-//       var myArray = data['response'];
-//       // console.log(myArray);
-//       for (var i = 0; i < myArray.length; i++) {
-//         console.log(myArray[i]);
-//         if(myArray[i] % 2 == 0){
-//           targetPair.append(myArray[i] + '<br>');
-//           // console.log(myArray[i] + 'pair');
-//         } else {
-//           targetOdd.append(myArray[i] + '<br>');
-//           // console.log(myArray[i] + 'odd');
-//         }
-//       }
-//     },
-//
-//     error: function (request, state, error){
-//       console.log('error!');
-//       console.log(request);
-//       console.log(state);
-//       console.log(error);
-//     }
-//   });
-//
-// }
-
-
-// //snack 2
-//
-//
-// $(document).ready(init);
-//
-// var utenteN = prompt('inserisci un numero');
-//
-// function init(){
-//   for (var i = 0; i < utenteN; i++) {
-//     getNewListener();
-//   }
-// }
-//
-//
-// function getNewListener(){
-//   $.ajax({
-//
-//     url: 'https://flynn.boolean.careers/exercises/api/random/word',
-//     method: 'GET',
-//     success: function (data, state){
-//
-//       var target = $('#frase');
-//       // console.log(data);
-//       // var success = data['success'];
-//
-//       var value = data['response'];
-//       target.append('<span>' + value + ' ' + '</span>');
-//       console.log(value);
-//
-//     },
-//
-//     error: function (request, state, error){
-//       console.log('error!');
-//       console.log(request);
-//       console.log(state);
-//       console.log(error);
-//     }
-//   });
-//
-// }
+}

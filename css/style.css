@@ -12,20 +12,10 @@ body, html {
   font-family: arial, monospace;
 }
 
-.all-container{
-  width: 600px;
-  height: 600px;
-  margin: auto;
-}
-.square-row{
-  width: 100%;
-  height: calc(100% / 6);
-  display: flex;
-}
 
 .my-square{
-  width: calc(100% / 6);
-  height: auto;
+  width: 100px;
+  height: 100px;
   margin: 5px;
   background-color: #a8dcf7;
   display: flex;
@@ -43,4 +33,13 @@ body, html {
 
 .green{
   background-color: #c6f299;
+}
+
+
+#my-big-square{
+  width: 700px;
+  height: 700px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
