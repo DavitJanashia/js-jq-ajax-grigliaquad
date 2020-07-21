@@ -6,12 +6,28 @@ function init(){
 }
 // ************************************************************
 
+function createSquare(){
+  var template = $('#template').html();
+  // console.log(template);
+  // var compiled = Handlebars.compile(template);
+  // console.log(compiled);
+  var target = $('#my-big-square');
+
+  for (var i = 0; i < 36; i++) {
+    target.append(template);
+  }
+}
+// ************************************************************
+
 function myClickSquare(){
   var square = $('.my-square');
   square.click(function(){
     var mySquare = $(this);
-    mySquare.html('');
-    getRandomNumber();
+    if (!(mySquare.hasClass('green')) && !(mySquare.hasClass('yellow')) ) {
+
+      // mySquare.html('');
+      getRandomNumber();
+    }
 
 
     function getRandomNumber(){
@@ -42,19 +58,4 @@ function myClickSquare(){
       });
     }
   });
-}
-// ************************************************************
-
-function createSquare(){
-
-  var template = $('#template').html();
-  // console.log(template);
-  var compiled = Handlebars.compile(template);
-  // console.log(compiled);
-  var target = $('#my-big-square');
-
-  for (var i = 0; i < 36; i++) {
-    target.append(template);
-  }
-
 }
