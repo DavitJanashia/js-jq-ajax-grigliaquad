@@ -27,18 +27,20 @@ body, html {
   width: calc(100% / 6);
   height: auto;
   margin: 5px;
-  background-color: pink;
+  background-color: #a8dcf7;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 35px;
   font-family:  monospace;
+  box-shadow: 0 2px 3px 4px rgba(0, 50, 50, 0.1);
+  border: #7cb6d4;
 }
 
 .yellow{
-  background-color: yellow;
+  background-color: #feff8a;
 }
 
 .green{
-  background-color: green;
+  background-color: #c6f299;
 }
